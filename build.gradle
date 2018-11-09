@@ -1,0 +1,58 @@
+group 'org.elvaston.apps'
+version 'trunk-SNAPSHOT'
+
+apply plugin: 'java'
+
+sourceCompatibility = 1.8
+
+ext.gradleScriptDir = file('gradle')
+
+ext {
+    junitVersion = '4.12'
+    log4j2Version = '2.8.2'
+    slf4jVersion = '1.7.4'
+}
+
+subprojects {
+    apply plugin: 'java'
+    apply plugin: 'findbugs'
+    apply from: "$gradleScriptDir/coverage.gradle"
+    apply from: "$gradleScriptDir/checkstyle.gradle"
+
+    sourceCompatibility = 1.8
+
+    repositories {
+        maven {
+            url "http://sevntu-checkstyle.github.com/sevntu.checkstyle/maven2"
+        }
+        jcenter()
+    }
+
+    jacoco {
+        toolVersion = '0.7.8'
+    }
+
+    dependencies {
+        compile "org.apache.logging.log4j:log4j-api:$log4j2Version"
+        compile "org.apache.logging.log4j:log4j-core:$log4j2Version"
+        compile "org.apache.logging.log4j:log4j-slf4j-impl:$log4j2Version"
+    }
+
+    tasks.withType(FindBugs) {
+        reports {
+            xml.enabled=false
+            html.enabled=true
+        }
+    }
+
+    dependencies {
+        checkstyle 'com.puppycrawl.tools:checkstyle:7.7'
+        checkstyle 'com.github.sevntu.checkstyle:sevntu-checks:1.23.1'
+
+        testCompile("junit:junit:4.11")
+    }
+}
+
+project("elvaston-algorithms") {
+    description = "Elvaston Algorithms"
+}
