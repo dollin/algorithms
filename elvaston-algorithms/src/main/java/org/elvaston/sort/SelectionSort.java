@@ -13,7 +13,7 @@ import java.util.stream.IntStream;
  * item and exchange it with the second entry. Continue in this way until the entire array is sorted.
  * This method is called selection sort because it works by repeatedly selecting the smallest remaining item.
  *
- * Proposition: Selection sort uses ~(n * n)/2 compares and n exchanges to sort an array of length n.
+ * Proposition: Selection sort uses ~(N^2)/2 compares and n exchanges to sort an array of length N.
  */
 public class SelectionSort implements Sort {
 

@@ -14,9 +14,9 @@ import java.util.stream.IntStream;
  * one position to the right, before inserting the current item into the vacated position.
  *
  * Proposition #1.
- * For randomly ordered arrays of length n with distinct keys, insertion sort uses ~(n * n)/4 compares
- * and ~(n * n)/4 exchanges on the average.
- * The worst case is ~(n * n)/2 compares and ~(n * n)/2 exchanges and the best case is n-1 compares and 0 exchanges.
+ * For randomly ordered arrays of length n with distinct keys, insertion sort uses ~(N^2)/4 compares
+ * and ~(N^2)/4 exchanges on the average.
+ * The worst case is ~(N^2)/2 compares and ~(N^2)/2 exchanges and the best case is N-1 compares and 0 exchanges.
  * Insertion sort works well for certain types of non-random arrays that often arise in practice, even if they are huge.
  * An inversion is a pair of keys that are out of order in the array. For instance, E X A M P L E has 11 inversions:
  * E-A, X-A, X-M, X-P, X-L, X-E, M-L, M-E, P-L, P-E, and L-E. If the number of inversions in an array is less than
