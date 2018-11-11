@@ -13,10 +13,21 @@ public interface Sort {
 
     Logger LOG = LoggerFactory.getLogger(SelectionSort.class);
 
+    /**
+     * Sort the given char array.
+     * Uses {@code Arrays.sort} by default
+     * @param chars the array to sort
+     */
     default void sort(char[] chars) {
         Arrays.sort(chars);
     }
 
+    /**
+     * To log the from and to indexes that we are switching.
+     * @param chars the array whose length to use
+     * @param from the index to swap from
+     * @param to the index to swap into
+     */
     default void logSwitches(char[] chars, int from, int to) {
         StringBuffer sb = new StringBuffer("[");
         for (int i = 0; i < chars.length; i++) {
@@ -33,6 +44,12 @@ public interface Sort {
         LOG.info("{}", sb);
     }
 
+    /**
+     * Swap two array elements.
+     * @param chars the array to use
+     * @param from the index to swap from
+     * @param to the index to swap into
+     */
     default void swap(char[] chars, int from, int to) {
         char tmp = chars[from];
         chars[from] = chars[to];

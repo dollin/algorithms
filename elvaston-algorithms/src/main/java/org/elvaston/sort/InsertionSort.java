@@ -12,7 +12,7 @@ import java.util.stream.IntStream;
  * into its proper place among those already considered (keeping them sorted).
  * In a computer implementation, we need to make space for the current item by moving larger items
  * one position to the right, before inserting the current item into the vacated position.
- *
+ * <p>
  * Proposition #1.
  * For randomly ordered arrays of length n with distinct keys, insertion sort uses ~(N^2)/4 compares
  * and ~(N^2)/4 exchanges on the average.
@@ -21,11 +21,13 @@ import java.util.stream.IntStream;
  * An inversion is a pair of keys that are out of order in the array. For instance, E X A M P L E has 11 inversions:
  * E-A, X-A, X-M, X-P, X-L, X-E, M-L, M-E, P-L, P-E, and L-E. If the number of inversions in an array is less than
  * a constant multiple of the array size, we say that the array is partially sorted.
- *
+ * </p>
+ * <p>
  * Proposition #2.
  * The number of exchanges used by insertion sort is equal to the number of inversions in the array,
  * and the number of compares is at least equal to the number of inversions and at most equal to
  * the number of inversions plus the array size.
+ * </p>
  */
 public class InsertionSort implements Sort {
 
@@ -36,11 +38,11 @@ public class InsertionSort implements Sort {
         LOG.info("{}", chars);
 
         IntStream.range(1, chars.length).forEach(i -> {
-            int j = i;
-            while(j > 0 && chars[j] < chars[j - 1]) {
-                logSwitches(chars, j - 1, j);
-                swap(chars, j, j - 1);
-                j--;
+            int index = i;
+            while (index > 0 && chars[index] < chars[index - 1]) {
+                logSwitches(chars, index - 1, index);
+                swap(chars, index, index - 1);
+                index--;
             }
         });
         LOG.info("{}", chars);
