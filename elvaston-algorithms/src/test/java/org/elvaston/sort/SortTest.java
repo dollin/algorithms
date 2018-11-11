@@ -21,4 +21,12 @@ public class SortTest {
         new DefaultSort().sort(example);
         Assert.assertEquals("ACEEEEILLMNOOPRSSTTX", String.copyValueOf(example));
     }
+
+    @Test
+    public void insertionSort() {
+        char[] example = "SELECTIONSORTEXAMPLE".toCharArray();
+        new InsertionSort().sort(example);
+        Assert.assertEquals("ACEEEEILLMNOOPRSSTTX", String.copyValueOf(example));
+    }
+
 }
