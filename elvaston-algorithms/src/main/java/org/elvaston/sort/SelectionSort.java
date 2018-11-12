@@ -4,8 +4,6 @@ import org.elvaston.api.Sort;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.util.stream.IntStream;
-
 /**
  * Selection Sort.
  * One of the simplest sorting algorithms that works as follows:
@@ -24,7 +22,7 @@ public class SelectionSort implements Sort {
     public void sort(char[] chars) {
         LOG.info("{}", chars);
 
-        IntStream.range(0, chars.length).forEach(i -> {
+        for (int i = 0; i < chars.length; i++) {
             char min = Character.MAX_VALUE;
             int to = i;
             for (int j = i; j < chars.length; j++) {
@@ -35,7 +33,7 @@ public class SelectionSort implements Sort {
             }
             logSwitches(chars, i, to);
             swap(chars, i, to);
-        });
+        }
         LOG.info("{}", chars);
     }
 }
