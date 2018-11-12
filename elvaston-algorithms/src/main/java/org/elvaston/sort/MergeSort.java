@@ -11,7 +11,7 @@ import org.slf4j.LoggerFactory;
  * method without using a significant amount of extra space, such solutions are remarkably complicated.
  * Instead, merge() copies everything to an auxiliary array and then merges back to the original.
  * <p>
- * Proposition. Mergesort uses between 1/2 N lg N and N lg N compares and at most 6 N lg N array accesses
+ * Proposition. MergeSort uses between 1/2 N lg N and N lg N compares and at most 6 N lg N array accesses
  * to sort any array of length N
  * </p>
  * <p>

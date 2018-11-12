@@ -5,8 +5,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * Quicksort.
- * Quicksortis a divide-and-conquer method for sorting. It works by partitioning an array into two parts,
+ * QuickSort.
+ * QuickSort is a divide-and-conquer method for sorting. It works by partitioning an array into two parts,
  * then sorting the parts independently. The crux of the method is the partitioning process,
  * which rearranges the array to make the following three conditions hold:
  * 1. The entry a[j] is in its final place in the array, for some j.
@@ -23,7 +23,7 @@ import org.slf4j.LoggerFactory;
  * the partitioning item.
  * </p>
  * <p>
- * Proposition. Quicksort uses ~2 N ln N compares (and one-sixth that many exchanges)
+ * Proposition. QuickSort uses ~2 N ln N compares (and one-sixth that many exchanges)
  * on the average to sort an array of length N with distinct keys.
  * </p>
  */

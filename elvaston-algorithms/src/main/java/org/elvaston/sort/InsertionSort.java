@@ -7,7 +7,7 @@ import org.slf4j.LoggerFactory;
 import java.util.stream.IntStream;
 
 /**
- * Insertion sort.
+ * InsertionSort.
  * The algorithm that people often use to sort bridge hands is to consider the cards one at a time, inserting each
  * into its proper place among those already considered (keeping them sorted).
  * In a computer implementation, we need to make space for the current item by moving larger items

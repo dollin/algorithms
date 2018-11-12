@@ -5,7 +5,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * Selection Sort.
+ * SelectionSort.
  * One of the simplest sorting algorithms that works as follows:
  * First, find the smallest item in the array, and exchange it with the first entry. Then, find the next smallest
  * item and exchange it with the second entry. Continue in this way until the entire array is sorted.
