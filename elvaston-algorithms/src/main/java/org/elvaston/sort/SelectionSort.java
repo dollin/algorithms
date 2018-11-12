@@ -20,9 +20,9 @@ public class SelectionSort implements Sort {
 
     @Override
     public void sort(char[] chars) {
-        LOG.info("{}", chars);
 
         for (int i = 0; i < chars.length; i++) {
+            LOG.info("Running selection w/ index entry i={}", i);
             char min = Character.MAX_VALUE;
             int to = i;
             for (int j = i; j < chars.length; j++) {
@@ -31,7 +31,6 @@ public class SelectionSort implements Sort {
                     min = chars[j];
                 }
             }
-            logSwitches(chars, i, to);
             swap(chars, i, to);
         }
         LOG.info("{}", chars);

@@ -29,4 +29,11 @@ public class SortTest {
         Assert.assertEquals("ACEEEEILLMNOOPRSSTTX", String.copyValueOf(example));
     }
 
+    @Test
+    public void shellSort() {
+        char[] example = "SELECTIONSORTEXAMPLE".toCharArray();
+        new ShellSort().sort(example);
+        Assert.assertEquals("ACEEEEILLMNOOPRSSTTX", String.copyValueOf(example));
+    }
+
 }

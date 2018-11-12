@@ -35,12 +35,11 @@ public class InsertionSort implements Sort {
 
     @Override
     public void sort(char[] chars) {
-        LOG.info("{}", chars);
 
         IntStream.range(1, chars.length).forEach(i -> {
+            LOG.info("Running insertion w/ index entry i={}", i);
             int index = i;
             while (index > 0 && chars[index] < chars[index - 1]) {
-                logSwitches(chars, index - 1, index);
                 swap(chars, index, index - 1);
                 index--;
             }

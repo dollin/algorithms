@@ -1,6 +1,5 @@
 package org.elvaston.api;
 
-import org.elvaston.sort.SelectionSort;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -11,7 +10,7 @@ import java.util.Arrays;
  */
 public interface Sort {
 
-    Logger LOG = LoggerFactory.getLogger(SelectionSort.class);
+    Logger LOG = LoggerFactory.getLogger(Sort.class);
 
     /**
      * Sort the given char array.
@@ -29,12 +28,10 @@ public interface Sort {
      * @param to the index to swap into
      */
     default void logSwitches(char[] chars, int from, int to) {
-        StringBuffer sb = new StringBuffer("[");
+        StringBuffer sb = new StringBuffer("      : [");
         for (int i = 0; i < chars.length; i++) {
-            if (i == from) {
-                sb.append(">");
-            } else if (i == to) {
-                sb.append("<");
+            if (i == from || i == to) {
+                sb.append("#");
             } else {
                 sb.append(" ");
             }
@@ -51,9 +48,11 @@ public interface Sort {
      * @param to the index to swap into
      */
     default void swap(char[] chars, int from, int to) {
+        LOG.info("before: {}", chars);
+        logSwitches(chars, from, to);
         char tmp = chars[from];
         chars[from] = chars[to];
         chars[to] = tmp;
-        LOG.info("{}", chars);
+        LOG.info("after : {}", chars);
     }
 }
