@@ -42,4 +42,12 @@ public class SortTest {
         new MergeSort().sort(example);
         Assert.assertEquals("ACEEEEILLMNOOPRSSTTX", String.copyValueOf(example));
     }
+
+
+    @Test
+    public void quickSort() {
+        char[] example = "SELECTIONSORTEXAMPLE".toCharArray();
+        new QuickSort().sort(example);
+        Assert.assertEquals("ACEEEEILLMNOOPRSSTTX", String.copyValueOf(example));
+    }
 }
