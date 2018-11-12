@@ -36,4 +36,10 @@ public class SortTest {
         Assert.assertEquals("ACEEEEILLMNOOPRSSTTX", String.copyValueOf(example));
     }
 
+    @Test
+    public void mergeSort() {
+        char[] example = "SELECTIONSORTEXAMPLE".toCharArray();
+        new MergeSort().sort(example);
+        Assert.assertEquals("ACEEEEILLMNOOPRSSTTX", String.copyValueOf(example));
+    }
 }

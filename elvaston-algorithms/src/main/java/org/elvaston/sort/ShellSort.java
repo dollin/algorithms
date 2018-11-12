@@ -27,19 +27,19 @@ public class ShellSort implements Sort {
     @Override
     public void sort(char[] chars) {
 
-        int h = 1;
-        while (h < chars.length) {
-            h = (h * 3) + 1;
+        int increments = 1;
+        while (increments < chars.length) {
+            increments = (increments * 3) + 1;
         }
 
-        while (h >= 1) {
-            LOG.info("Running shell w/ every h={} th entry", h);
-            for (int i = h; i < chars.length; i++) {
-                for (int j = i; j >= h && chars[j] < chars[j - h]; j -= h) {
-                    swap(chars, j, j-h);
+        while (increments >= 1) {
+            LOG.info("Running shell w/ every h={} th entry", increments);
+            for (int i = increments; i < chars.length; i++) {
+                for (int j = i; j >= increments && chars[j] < chars[j - increments]; j -= increments) {
+                    swap(chars, j, j - increments);
                 }
             }
-            h /= 3;
+            increments /= 3;
         }
         LOG.info("{}", chars);
     }
