@@ -56,3 +56,7 @@ subprojects {
 project("elvaston-algorithms") {
     description = "Elvaston Algorithms"
 }
+
+project("elvaston-coding-problems") {
+    description = "Elvaston Coding Exercises"
+}
