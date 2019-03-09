@@ -1,7 +1,11 @@
-package org.elvaston.leetcode.easy;
+package org.elvaston.leetcode;
+
+import org.elvaston.leetcode.tags.bit_manipulation;
+import org.elvaston.leetcode.difficulty.easy;
 
 /**
  * https://leetcode.com/problems/convert-a-number-to-hexadecimal/
+ *
  * Given an integer, write an algorithm to convert it to hexadecimal. For negative integer, two’s complement method is used.
  * Note:
  * All letters in hexadecimal (a-f) must be in lowercase.
@@ -10,20 +14,20 @@ package org.elvaston.leetcode.easy;
  * The given number is guaranteed to fit within the range of a 32-bit signed integer.
  * You must not use any method provided by the library which converts/formats the number to hex directly.
  *
- * Example 1:
  * Input:
  * 26
  *
  * Output:
  * "1a"
  *
- * Example 2:
  * Input:
  * -1
  *
  * Output:
  * "ffffffff"
  */
+@easy
+@bit_manipulation
 public class convert_a_number_to_hexadecimal {
     public String toHex(int i) {
         if (i == 0) {

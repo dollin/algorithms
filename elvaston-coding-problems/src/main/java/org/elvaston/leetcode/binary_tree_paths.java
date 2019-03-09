@@ -1,10 +1,16 @@
-package org.elvaston.leetcode.easy;
+package org.elvaston.leetcode;
+
+import org.elvaston.leetcode.datastructures.TreeNode;
+import org.elvaston.leetcode.tags.depth_first_search;
+import org.elvaston.leetcode.difficulty.easy;
+import org.elvaston.leetcode.tags.tree;
 
 import java.util.ArrayList;
 import java.util.List;
 
 /**
  * https://leetcode.com/problems/binary-tree-paths/
+ *
  * Given a binary tree, return all root-to-leaf paths.
  * Note: A leaf is a node with no children.
  * Example:
@@ -20,14 +26,10 @@ import java.util.List;
  *
  * Explanation: All root-to-leaf paths are: 1->2->5, 1->3
  */
+@easy
+@depth_first_search
+@tree
 public class binary_tree_paths {
-
-    public class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-        TreeNode(int x) { val = x; }
-    }
 
     public List<String> binaryTreePaths(TreeNode root) {
         List<String> paths = new ArrayList<>();
