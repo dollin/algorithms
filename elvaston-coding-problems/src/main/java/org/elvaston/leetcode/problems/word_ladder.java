@@ -1,4 +1,4 @@
-package org.elvaston.leetcode;
+package org.elvaston.leetcode.problems;
 
 import org.elvaston.leetcode.tags.breadth_first_search;
 import org.elvaston.leetcode.difficulty.medium;
