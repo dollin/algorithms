@@ -1,4 +1,4 @@
-package org.elvaston.leetcode;
+package org.elvaston.leetcode.problems;
 
 import org.elvaston.leetcode.datastructures.ListNode;
 import org.elvaston.leetcode.difficulty.easy;
