@@ -1,4 +1,4 @@
-package org.elvaston.leetcode;
+package org.elvaston.leetcode.problems;
 
 import org.elvaston.leetcode.tags.bit_manipulation;
 import org.elvaston.leetcode.difficulty.easy;

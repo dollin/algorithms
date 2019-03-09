@@ -1,4 +1,4 @@
-package org.elvaston.leetcode;
+package org.elvaston.leetcode.problems;
 
 import org.elvaston.leetcode.datastructures.TreeNode;
 import org.elvaston.leetcode.tags.depth_first_search;
