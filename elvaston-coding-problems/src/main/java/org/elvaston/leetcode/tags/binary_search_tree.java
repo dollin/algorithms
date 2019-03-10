@@ -1,4 +1,4 @@
 package org.elvaston.leetcode.tags;
 
-public @interface binary_tree {
+public @interface binary_search_tree {
 }
