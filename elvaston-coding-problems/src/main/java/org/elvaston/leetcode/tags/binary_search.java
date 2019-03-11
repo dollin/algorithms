@@ -1,4 +1,7 @@
 package org.elvaston.leetcode.tags;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
 
-public @interface binary_search {
+@Retention(RetentionPolicy.RUNTIME)
+public @interface  binary_search {
 }

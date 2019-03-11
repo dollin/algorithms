@@ -1,4 +1,7 @@
 package org.elvaston.leetcode.tags;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
 
-public @interface divide_and_conquer {
+@Retention(RetentionPolicy.RUNTIME)
+public @interface  divide_and_conquer {
 }
