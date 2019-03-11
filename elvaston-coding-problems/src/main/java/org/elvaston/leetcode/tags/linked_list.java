@@ -1,4 +1,7 @@
 package org.elvaston.leetcode.tags;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
 
-public @interface linked_list {
+@Retention(RetentionPolicy.RUNTIME)
+public @interface  linked_list {
 }

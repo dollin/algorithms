@@ -1,4 +1,7 @@
 package org.elvaston.leetcode.difficulty;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
 
-public @interface hard {
+@Retention(RetentionPolicy.RUNTIME)
+public @interface  hard {
 }
