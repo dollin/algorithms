@@ -4,5 +4,5 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 
 @Retention(RetentionPolicy.RUNTIME)
-public @interface  bit_manipulation {
+public @interface bit_manipulation {
 }
