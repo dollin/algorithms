@@ -1,4 +1,4 @@
-package org.elvaston.leetcode.todo;
+package org.elvaston.leetcode.problems;
 
 import org.elvaston.leetcode.tags.dynamic_programming;
 import org.elvaston.leetcode.difficulty.medium;
