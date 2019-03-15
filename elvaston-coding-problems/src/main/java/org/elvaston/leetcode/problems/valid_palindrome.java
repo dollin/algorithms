@@ -1,5 +1,9 @@
 package org.elvaston.leetcode.problems;
 
+import org.elvaston.leetcode.difficulty.easy;
+import org.elvaston.leetcode.tags.string;
+import org.elvaston.leetcode.tags.two_pointers;
+
 /**
  * https://leetcode.com/problems/valid-palindrome/
  *
@@ -16,6 +20,9 @@ package org.elvaston.leetcode.problems;
  * Input: "race a car"
  * Output: false
  */
+@easy
+@string
+@two_pointers
 public class valid_palindrome {
     public boolean isPalindrome(String s) {
         String lowerS = s.toLowerCase();
@@ -24,11 +31,11 @@ public class valid_palindrome {
         while(leftIndex < rightIndex) {
             char leftChar = lowerS.charAt(leftIndex);
             char rightChar = lowerS.charAt(rightIndex);
-            if (leftChar < 'a' || leftChar > 'z') {
+            if (!((leftChar >= 'a' && leftChar <= 'z') || (leftChar >= '0' && leftChar <= '9'))) {
                 leftIndex++;
                 continue;
             }
-            if (rightChar < 'a' || rightChar > 'z') {
+            if (!((rightChar >= 'a' && rightChar <= 'z') || (rightChar >= '0' && rightChar <= '9'))) {
                 rightIndex--;
                 continue;
             }
@@ -44,7 +51,7 @@ public class valid_palindrome {
     public static void main(String[] args) {
         valid_palindrome solution = new valid_palindrome();
         System.out.println("true = " + solution.isPalindrome(" !$%^&|&&ADA      "));
-        System.out.println("true = " + solution.isPalindrome("AAAAAA"));
+        System.out.println("false = " + solution.isPalindrome("0P"));
         System.out.println("true = " + solution.isPalindrome("racecar"));
         System.out.println("true = " + solution.isPalindrome(""));
         System.out.println("true = " + solution.isPalindrome("A man, a plan, a canal: Panama"));
