@@ -1,6 +1,7 @@
 package org.elvaston.leetcode.problems;
 
 import org.elvaston.leetcode.difficulty.medium;
+import org.elvaston.leetcode.tags.array;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -24,7 +25,12 @@ import java.util.Set;
  *              Note that the answer must be a substring, "pwke" is a subsequence and not a substring.
  */
 @medium
+@array
 public class longest_substring_without_repeating_characters {
+
+    /**
+     * Using a set to keep track of the substring, but could also use an array[26], [128] (for ASCII) or a HashMap<char, int>
+     */
     public int lengthOfLongestSubstring(String s) {
         if (s == null || s.length() == 0) {
             return 0;
