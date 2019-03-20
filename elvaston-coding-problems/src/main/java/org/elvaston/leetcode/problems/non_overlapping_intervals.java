@@ -32,7 +32,10 @@ import java.util.Comparator;
 @greedy
 public class non_overlapping_intervals {
     public int eraseOverlapIntervals(Interval[] intervals) {
+
+        //different sorts...
         Arrays.sort(intervals, Comparator.comparingInt(o -> o.start));
+        Arrays.sort(intervals, (o1, o2) -> o1.start - o2.start);
 
         int count = 0;
         int ptr = Integer.MIN_VALUE;
