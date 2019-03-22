@@ -14,6 +14,6 @@ public class TreeNode {
 
     @Override
     public String toString() {
-        return "[" + (left == null ? "" : left + "<-") + val + (right == null ? "" : "->" + right) + "]";
+        return val + " [" + (left == null ? "" : left) + ", " + (right == null ? "" : right) + "]";
     }
 }
