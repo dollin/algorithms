@@ -23,17 +23,18 @@ import org.elvaston.leetcode.tags.string;
 public class longest_palindromic_substring {
 
     public String longestPalindrome(String s) {
-        String largestPalindrome = "";
-        for (int i = 0; i < s.length(); i++) {
-            for (int j = s.length(); j > i; j--) {
-                String tmp = s.substring(i, j);
-                if (tmp.length() > largestPalindrome.length() && isPalindrome(tmp)) {
-                    largestPalindrome = tmp;
-                    j = 0; //short circuit
+        //sub-string length
+        for (int len = s.length(); len >= 0; len--) {
+            for (int i = 0; i + len <= s.length() ; i++) {
+                String tmp = s.substring(i, len + i);
+                if (isPalindrome(tmp)) {
+                    return tmp;
                 }
+                System.out.print(tmp + ",");
             }
+            System.out.println();
         }
-        return largestPalindrome;
+        return "";
     }
 
     private static boolean isPalindrome(String s) {
