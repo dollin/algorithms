@@ -45,4 +45,21 @@ public class reverse_integers {
         }
         return sign * (int) reversedNumber;
     }
+
+    public int reverse_without_long(int x) {
+        boolean isneg = x < 0 ? true : false;
+        int rev = 0;
+        while (x != 0) {
+            System.out.println(rev);
+            int mod = Math.abs(x % 10);
+            if (rev > Integer.MAX_VALUE / 10 ||
+                    (rev == Integer.MAX_VALUE / 10 && mod > Integer.MAX_VALUE % 10)) {
+                return 0;
+            }
+            rev *= 10;
+            rev += mod;
+            x /= 10;
+        }
+        return isneg ? -1 * rev : rev;
+    }
 }
