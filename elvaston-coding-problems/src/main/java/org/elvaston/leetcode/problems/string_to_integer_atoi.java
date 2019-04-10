@@ -4,6 +4,8 @@ import org.elvaston.leetcode.tags.math;
 import org.elvaston.leetcode.difficulty.medium;
 import org.elvaston.leetcode.tags.string;
 
+import java.util.ArrayList;
+
 /**
  * https://leetcode.com/problems/string-to-integer-atoi
  *
@@ -53,6 +55,7 @@ import org.elvaston.leetcode.tags.string;
 @string
 public class string_to_integer_atoi {
     public int myAtoi(String str) {
+
         if (str == null || str.trim().isEmpty()) {
             return 0;
         }
