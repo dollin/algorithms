@@ -1,5 +1,7 @@
 package org.elvaston.leetcode.problems;
 
+import org.elvaston.leetcode.difficulty.hard;
+
 /**
  * https://leetcode.com/problems/lru-cache/
  *
@@ -9,6 +11,7 @@ package org.elvaston.leetcode.problems;
  * put(key, value) - Set or insert the value if the key is not already present.
  * When the cache reached its capacity, it should invalidate the least recently used item before inserting a new item.
  */
+@hard
 public class lru_cache {
 
     static class LRUCache {
