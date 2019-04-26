@@ -4,8 +4,6 @@ import org.elvaston.api.Sort;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.util.TreeSet;
-
 /**
  * MergeSort.
  * We use a merge(chars, lo, mid, hi) that puts the results of merging the subarrays chars[lo..mid] w/ chars[mid+1..hi]
