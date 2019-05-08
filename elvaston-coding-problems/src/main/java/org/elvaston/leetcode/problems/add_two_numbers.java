@@ -5,6 +5,10 @@ import org.elvaston.leetcode.tags.linked_list;
 import org.elvaston.leetcode.tags.math;
 import org.elvaston.leetcode.difficulty.medium;
 
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Stack;
+
 /**
  * https://leetcode.com/problems/add-two-numbers/
  *
@@ -20,37 +24,42 @@ import org.elvaston.leetcode.difficulty.medium;
 @linked_list
 @math
 public class add_two_numbers {
-    public static ListNode addTwoNumbers(ListNode list_a, ListNode list_b) {
+    public static ListNode addTwoNumbers(ListNode a, ListNode b) {
+        Queue<Integer> s = new LinkedList<>();
         int sum = 0;
-        ListNode list_i = list_a;
-        while (list_i != null && list_b != null) {
-            sum += list_i.val + list_b.val;
-            list_i.val = sum % 10;
+        while (a != null || b != null) {
+            if (a != null) {
+                sum += a.val;
+                a = a.next;
+            }
+            if (b != null) {
+                sum += b.val;
+                b = b.next;
+            }
+            s.add(sum % 10);
             sum /= 10;
-
-            if (list_i.next == null && list_b.next != null) {
-                list_i.next = new ListNode(0);
-            }
-            list_i = list_i.next;
-
-            if (list_b.next != null) {
-                list_b = list_b.next;
-            } else {
-                list_b = new ListNode(0);
-            }
+        }
+        if (sum != 0) {
+            s.add(sum);
         }
 
-        return list_a;
+        ListNode n = new ListNode(-1);
+        ListNode dummy = n;
+        while (!s.isEmpty()) {
+            dummy.next = new ListNode(s.remove());
+            dummy = dummy.next;
+        }
+        return n.next;
     }
 
     public static void main(String[] args) {
         ListNode a = new ListNode(5);
-        a.next = new ListNode(2);
-        a.next.next = new ListNode(3);
-        a.next.next.next = new ListNode(7);
+//        a.next = new ListNode(2);
+//        a.next.next = new ListNode(3);
+//        a.next.next.next = new ListNode(7);
 
-        ListNode b = new ListNode(6);
-        b.next = new ListNode(4);
+        ListNode b = new ListNode(5);
+//        b.next = new ListNode(4);
 
         System.out.println(addTwoNumbers(a, b));
     }

@@ -25,10 +25,10 @@ import org.elvaston.leetcode.tags.trie;
  * Note:
  * You may assume that all words are consist of lowercase letters a-z.
  */
+@medium
 @backtracking
 @trie
-@medium
-public class add_and_search_word_data_structure_design<back_tracking> {
+public class add_and_search_word_data_structure_design {
 
     static class WordDictionary {
 
@@ -42,6 +42,7 @@ public class add_and_search_word_data_structure_design<back_tracking> {
             }
             Node() {
             }
+
         }
 
         private Node root = new Node();
