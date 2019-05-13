@@ -1,5 +1,8 @@
 package org.elvaston.leetcode.problems;
 
+import org.elvaston.leetcode.difficulty.medium;
+
+@medium
 public class knapsack {
 
     public int knapsack(int[] wghts, int[] vals, int W) {
