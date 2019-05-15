@@ -2,6 +2,11 @@ package org.elvaston.leetcode.problems;
 
 import org.elvaston.leetcode.difficulty.hard;
 
+import java.util.Deque;
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.Map;
+
 /**
  * https://leetcode.com/problems/lru-cache/
  *
@@ -13,6 +18,33 @@ import org.elvaston.leetcode.difficulty.hard;
  */
 @hard
 public class lru_cache {
+
+    static class QuantCastLRUCache {
+
+        private final int capacity;
+        Map<String, Integer> elements = new HashMap<>();
+        Deque<String> counts = new LinkedList<>();
+
+        QuantCastLRUCache(int capacity) {
+            this.capacity = capacity;
+        }
+
+        public Integer get(String key) {
+            counts.remove(key);
+            counts.add(key);
+            return elements.get(key);
+        }
+
+        public void put(String key, Integer value) {
+            counts.remove(key);
+            if (counts.size() == capacity) {
+                String rmKey = counts.removeFirst();
+                elements.remove(rmKey);
+            }
+            counts.add(key);
+            elements.put(key, value);
+        }
+    }
 
     static class LRUCache {
 
@@ -54,7 +86,6 @@ public class lru_cache {
             int index = 0;
             int min_hits = counter;
             for (int i = 1; i < hits.length; i++) {
-
                 if (hits[i] < min_hits) {
                     min_hits = hits[i];
                     index = i;
@@ -74,5 +105,13 @@ public class lru_cache {
         cache.put(1,1);
         cache.put(4,1);
         System.out.println("-1=" + cache.get(2));
+
+        QuantCastLRUCache qcache = new QuantCastLRUCache(2);
+        qcache.put("2",1);
+        qcache.put("2",2);
+        System.out.println("2=" + qcache.get("2"));
+        qcache.put("1",1);
+        qcache.put("4",1);
+        System.out.println("-1=" + qcache.get("2"));
     }
 }
